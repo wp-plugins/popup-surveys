@@ -60,7 +60,7 @@ function wpsSaveResponse(surveyId,questionId,questionResponse,ipAddress) {
   
 }
 
-(function($) {
+jQuery(document).ready(function($) {
 
   $("#wps_close_wp_survey_box").on("click",function() {
   
