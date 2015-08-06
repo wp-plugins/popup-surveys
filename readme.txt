@@ -64,19 +64,19 @@ Setup Popup Surveys:
 
 == Frequently Asked Questions ==
 
-== How many surveys/polls can I create? ==
+= How many surveys/polls can I create? =
 
 You can create as many popup surveys/polls as you like.
 
-== Can I change the theme of the survey? ==
+= Can I change the theme of the survey? =
 
 Right now there is no option to change the look and feel of the survey. However, this is a feature that will be implemented in future releases of popup surveys.
 
-== How many multiple choice answers can I add to a survey/poll? ==
+= How many multiple choice answers can I add to a survey/poll? =
 
 You can add unlimited answers to the multiple choice surveys. However, if you add to many, it may be difficult for users to use :)
 
-== What types of questions can I ask? ==
+= What types of questions can I ask? =
 
 You can ask three kinds of questions in your survey:
 
@@ -84,19 +84,19 @@ You can ask three kinds of questions in your survey:
 * Net promoter score
 * Text answers
 
-== Do you have survey templates built into the plugin? ==
+= Do you have survey templates built into the plugin? =
 
 No, but this is a feature that will be implemented in the future
 
-== Is my data safe? ==
+= Is my data safe? =
 
 Your data is stored on your own server, and only you will have access to it. Therefore, your data is as safe as your own web server.
 
-== Can I use multiple questions in one survey/poll? ==
+= Can I use multiple questions in one survey/poll? =
 
 At this time there is only an option to have a single question. However, this will be implemented into future versions of popup polls.
 
-== Can I choose what URLs the survey/poll will appear on? ==
+= Can I choose what URLs the survey/poll will appear on? =
 
 At this time each survey/poll will show up on all pages of your site. In the future, we will be adding functionality to allow surveys on specific URLS or pages of your site.
 
