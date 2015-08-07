@@ -150,15 +150,31 @@ function get_survey_results_callback() {
   } elseif($thisQuestion->answer_type == "Net Promoter") {
     
     $i = 1;
+    $responseTotal = 0;
     while($i <= 10) {
     
       $qry = "SELECT * FROM $response_table_name WHERE survey_id = $surveyId AND response = $i";
       $responseArray = $wpdb->get_results($qry);
-      $responseCount = count($responseArray);
-      
-      echo "<p><strong>$i:</strong> $responseCount";
-      
+      $responseCount[$i] = count($responseArray);
+      $responseTotal += $responseCount[$i];      
       $i++;
+    
+    }
+    
+    foreach($responseCount as $key => $responseNumber) {
+    
+      $percentage = $responseNumber / $responseTotal;
+      $percentage = $percentage * 100;
+    
+      if($percentage > 0) {
+      
+        echo "<p><strong>$key:</strong><span class='wps_results_response_number'>$responseNumber</span><span class='wps_results_response_graph'><span class='wps_results_response_bar' style='width:$percentage%'>($percentage%)</span></span></p>";
+        
+      } else {
+      
+        echo "<p><strong>$key:</strong><span class='wps_results_response_number'>$responseNumber</span><span class='wps_results_response_graph'><span class='wps_results_response_bar' style='width:$percentage%'>&nbsp;</span></span></p>";
+        
+      }
     
     }
     

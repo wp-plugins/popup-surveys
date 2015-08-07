@@ -4,7 +4,7 @@ Donate link: http://www.ericsestimate.com/donate
 Tags: survey, poll, feedback, feedback form, qualitative survey, testing survey, survey form, popup survey, net promoter score, qualaroo, hotjar
 Requires at least: 4.0
 Tested up to: 4.2.4
-Stable tag: 1.01
+Stable tag: 1.02
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,7 @@ At this time each survey/poll will show up on all pages of your site. In the fut
 2. Add as many answers to multiple choice question surveys as you want.
 3. Customize the call to action text on your survey/poll.
 4. Customize the delay before a user sees your survey, or adjust how many times each user will see a survey or poll.
+5. Activate multiple surveys or polls at the same time. Each visitor will be shown a random poll that is active for them. 
 
 == Changelog ==
 

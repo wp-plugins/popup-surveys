@@ -1,6 +1,6 @@
 /* styles for wp survey */
 
-.wps_wp_survey_box {background-color: #333; border-radius: 6px 6px 0 0; position: fixed; bottom: -500px; padding: 20px; color: white; min-width: 280px; right: 10%; text-align: center; max-width: 400px; font-size: 13px;}
+.wps_wp_survey_box {background-color: #333; border-radius: 6px 6px 0 0; position: fixed; bottom: -500px; padding: 20px; color: white; min-width: 280px; right: 10%; text-align: center; max-width: 380px; font-size: 13px;}
  .wps_wp_survey_box h3,
  .wps_wp_survey_box h2,
  .wps_wp_survey_box h4,
@@ -26,7 +26,9 @@
  
  body .wps_wp_survey_box .wps_submit_area {height: 40px;display: block; padding: 0 20px;}
  
- body .wps_wp_survey_box .wps_question_submit_btn {color: white; border-radius: 4px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); font-size: 16px; padding: 6px 12px; display: inline-block; cursor: pointer; background: rgb(28, 184, 65); float: right;}
+ body .wps_wp_survey_box .wps_question_submit_btn {color: white; border-radius: 4px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); font-size: 16px; padding: 6px 12px; display: inline-block; cursor: pointer; background: #666; float: right;}
+ 
+ body .wps_wp_survey_box .wps_save_btn_activated {background: rgb(28, 184, 65);}
  
  body #wps_close_wp_survey_box {display: block; position: absolute; top: -18px; right: 8px; height: 20px; width: 32px; border-radius: 4px 4px 0 0; color: white; font-weight: bold; font-size: 16px; text-align: center; background-color: inherit; cursor: pointer;}
  

@@ -3,7 +3,7 @@
 Plugin Name: Popup Surveys
 Plugin URI: http://www.ericsestimate.com
 Description: Popup surveys lets you ask visitors questions about your site. Use this feedback to build a better blog or business.
-Version: 1.01
+Version: 1.02
 Author: dusthazard
 Author URI: http://www.ericsestimate.com
 License: GPL2

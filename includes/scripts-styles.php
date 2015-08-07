@@ -1,6 +1,6 @@
 <style type="text/css">
 
-      .wps_wp_survey_box {background-color: #333; border-radius: 6px 6px 0 0; padding: 20px; color: white; min-width: 280px; right: 10%; text-align: center; max-width: 400px;}
+      .wps_wp_survey_box {background-color: #333; border-radius: 6px 6px 0 0; padding: 20px; color: white; min-width: 280px; right: 10%; text-align: center; max-width: 380px;}
        .wps_wp_survey_box h3,
        .wps_wp_survey_box h2,
        .wps_wp_survey_box h4,
@@ -41,8 +41,10 @@
         color: #00a0d2;
       }
     
-      .pluginBtn {color: white; border-radius: 4px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); font-size: 16px; padding: 6px; display: inline-block; cursor: pointer;}
+      .pluginBtn {color: white; border-radius: 4px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); font-size: 16px; padding: 6px; display: inline-block; cursor: pointer; text-decoration: none;}
+       .pluginBtn:hover {color: white;}
       .greenBtn {background: rgb(28, 184, 65);}
+       .greenBtn:hover {background: rgb(63, 190, 106);}
       .maroonBtn {background: rgb(202, 60, 60);}
       .orangeBtn {background: rgb(223, 117, 20);}
       .lightBlueBtn {background: rgb(66, 184, 221);}        
@@ -66,7 +68,8 @@
        #tab_content h2 {margin: 0 0 20px; font-size: 28px;}
       
       #tab_main_content {max-width: 750px; vertical-align: top; display: inline-block; margin-right: 10%;}
-      #tab_sidebar {width: 200px; border: 1px solid #ccc; padding: 40px; background-color: #efefef; vertical-align: top; display: none;}
+      #tab_sidebar {width: 280px; border: 1px solid #ccc; background-color: #efefef; vertical-align: top; border-top: 16px solid #444; display: inline-block; float: right;}
+        #tab_sidebar div {padding: 30px 40px;}
        
       .survey_create_body {display: block; position: relative;}
         .survey_create_body div {vertical-align: top;}
@@ -77,12 +80,20 @@
         .survey_create_option h4 {font-size: 18px;}
         .create_answer {background-color: #efefef; padding: 12px; margin: 0 0 1rem;}
         
-       .survey_list_item {border: 1px solid #ccc; padding: 20px; margin: 0 0 1rem;}
+       .survey_list_item {border: 1px solid #ccc; padding: 10px 20px; margin: 0 0 1rem;}
         
        .survey_inactive {background-color: #efefef;}
        .survey_active {background-color: #d3e9cb; border: 4px solid #8cbf79;}
        
        .create_question_text textarea {width: 100%; height: 60px;}
+       
+       .show_results_area {display: block; position: relative;}
+        .show_results_area p {clear: both;}
+        .show_results_area strong {width: 28px; float: left; margin-top: 4px;}
+        .show_results_area .wps_results_response_number { float: left; margin-top: 4px; width: 1.4rem;}
+        .show_results_area .wps_results_response_graph {display: block; overflow: hidden;}
+        .show_results_area span.wps_results_response_bar {background-color: #85c16f; padding: 4px; display: block;}
+       
        
     
     </style>

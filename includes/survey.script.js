@@ -101,18 +101,22 @@ jQuery(document).ready(function($) {
     } else {
     
     }
-  
-    wpsSaveResponse(wpsSurveyId,wpsQuestionId,wpsQuestionResponse);
+    
+    if(wpsQuestionResponse) {
+        wpsSaveResponse(wpsSurveyId,wpsQuestionId,wpsQuestionResponse);
+    }
   
   });
 
   $(".wps_multiple_choice").on('click', function() {
     wpsSelectMultipleChoice($(this).attr('id'));
+    $(".wps_question_submit_btn").addClass("wps_save_btn_activated");
   });
   
   $(".wps_net_promoter_choice").on('click',function() {
     jQuery(".wps_net_promoter_choice").removeClass("wps_net_promoter_selected");
     jQuery(this).addClass("wps_net_promoter_selected");
+    $(".wps_question_submit_btn").addClass("wps_save_btn_activated");
   });
 
 });

@@ -34,10 +34,11 @@ function build_survey_page() {
           <div id="tab_main_content">
             <h2>Wordpress Popup Surveys</h2>
             <p>Your surveys are listed below. Please note that this is the very first version of this plugin. If you see any bugs or would like additional features, please <a href="http://www.ericsestimate.com/contact-eric/">contact me here</a>.</p>
+            <p><a href="?page=wp-survey-new" class="greenBtn pluginBtn">New Survey</a></p>
             <div id="list_all_surveys">
             <?php
               // find list of states in DB
-              $qry = "SELECT * FROM $survey_table_name ORDER BY status DESC";
+              $qry = "SELECT * FROM $survey_table_name ORDER BY status DESC, time DESC";
               $surveyArray = $wpdb->get_results( $qry );
               foreach($surveyArray as $surveyItem) {
                 $qry = "SELECT * FROM $response_table_name WHERE survey_id = " . $surveyItem->id;
@@ -49,8 +50,9 @@ function build_survey_page() {
                 <div id="survey_list_item_<?php echo $surveyItem->id; ?>" class='survey_list_item <?php echo $wpsStatusClass; ?>'>
                   <h3><?php echo $surveyItem->name; ?></h3>
                   <div class=''>
-                    <p>Survey Views: <?php echo $surveyItem->survey_views; ?><br />
-                       Survey Responses: <?php echo $responseCount; ?></p>
+                    <p><strong>Created Date:</strong> <?php echo date( 'F j, Y', strtotime($surveyItem->time)); ?><br />
+                       <strong>Survey Views:</strong> <?php echo $surveyItem->survey_views; ?><br />
+                       <strong>Survey Responses:</strong> <?php echo $responseCount; ?></p>
                     <p><a href="?page=wp-survey-new&wpsSurveyId=<?php echo $surveyItem->id; ?>">Edit Survey</a> | <span id="see_results_<?php echo $surveyItem->id; ?>" class="fauxlink show_results_btn">Show Results</span> | <?php echo $activateDeactivateLink; ?></p>
                     <div id="show_results_<?php echo $surveyItem->id; ?>" class="show_results_area" style="display: none;"></div>
                   </div>
@@ -59,13 +61,17 @@ function build_survey_page() {
             </div>
           </div> <!-- tab_main_content -->
           <div id="tab_sidebar">
-            <h4>Sidebar</h4>
+           <div>
+            <h4>Like this plugin?</h4>
+            <p><a href="https://wordpress.org/support/view/plugin-reviews/popup-surveys" target="_blank">Give us a review at Wordpress.org</a>.</p>
+            <p>Thanks in advance :)</p>
+           </div>
           </div>
         </div>
       </div> <!-- tab_content -->
     </div> <!-- wrap -->
     <div id="footerlinks">
-        <p>WP Surveys Powered By <a target="_blank" href="http://www.lprockstar.com">Landing Page Rockstar</a></p>
+        <p>WP Surveys Powered By <a target="_blank" href="http://www.lprockstar.com?pl=pus">Landing Page Rockstar</a></p>
     </div>
 <?php }
 function build_survey_options() {
@@ -80,7 +86,7 @@ function build_survey_options() {
         </div>
     </div>
   </div>
-  <div id="footerlinks"><p>WP Surveys Powered By <a target="_blank" href="http://www.lprockstar.com">Landing Page Rockstar</a></p></div>
+  <div id="footerlinks"><p>WP Surveys Powered By <a target="_blank" href="http://www.lprockstar.com?pl=pus">Landing Page Rockstar</a></p></div>
 
 <?php }
 
@@ -139,7 +145,7 @@ function build_new_survey_page() {
                 <div class="survey_create_options">
                   <div class="survey_create_option create_question_text">
                     <h4>Question Text</h4>
-                    <p><textarea name="question_text" class="text textarea" placeholder="Enter Question Text..."><?php echo isset($selectedQuestion) ? stripslashes($selectedQuestion->description) : ""; ?></textarea>
+                    <p><textarea name="question_text" class="text textarea"><?php echo isset($selectedQuestion) ? stripslashes($selectedQuestion->description) : "Your Question Text Goes Here"; ?></textarea>
                   </div>
                   <div class="survey_create_option create_answer_type">
                     <h4>Answer Type</h4>
@@ -170,10 +176,10 @@ function build_new_survey_page() {
                       else :
                     ?>
                       <div id="answer_1" class="create_answer">
-                        <p><input name="answer_1" class="text" placeholder="Don't Agree" type="text" /></p>
+                        <p><input name="answer_1" class="text" value="Yes" type="text" /></p>
                       </div>
                       <div id="answer_2" class="create_answer">
-                        <p><input name="answer_2" class="text" placeholder="Totally Agree" type="text" /></p>
+                        <p><input name="answer_2" class="text" value="No" type="text" /></p>
                       </div>
                     <?php endif; ?>
                     </div>
@@ -227,7 +233,7 @@ function build_new_survey_page() {
           </div> <!-- tab3_content -->
        </div>
     </div>
-    <div id="footerlinks"><p>WP Surveys Powered By <a target="_blank" href="http://www.lprockstar.com">Landing Page Rockstar</a></p></div>
+    <div id="footerlinks"><p>WP Surveys Powered By <a target="_blank" href="http://www.lprockstar.com?pl=pus">Landing Page Rockstar</a></p></div>
           
 <?php }
 function edit_survey() {
