@@ -168,11 +168,11 @@ function get_survey_results_callback() {
     
       if($percentage > 0) {
       
-        echo "<p><strong>$key:</strong><span class='wps_results_response_number'>$responseNumber</span><span class='wps_results_response_graph'><span class='wps_results_response_bar' style='width:$percentage%'>($percentage%)</span></span></p>";
+        echo "<p><span class='wps_results_response_key'><strong>$key:</strong></span><span class='wps_results_response_number'>$responseNumber</span><span class='wps_results_response_graph'><span class='wps_results_response_bar' style='width:$percentage%'>($percentage%)</span></span></p>";
         
       } else {
       
-        echo "<p><strong>$key:</strong><span class='wps_results_response_number'>$responseNumber</span><span class='wps_results_response_graph'><span class='wps_results_response_bar' style='width:$percentage%'>&nbsp;</span></span></p>";
+        echo "<p><span class='wps_results_response_key'><strong>$key:</strong></span><span class='wps_results_response_number'>$responseNumber</span><span class='wps_results_response_graph'><span class='wps_results_response_bar' style='width:$percentage%'>&nbsp;</span></span></p>";
         
       }
     
@@ -190,7 +190,7 @@ function get_survey_results_callback() {
     
     foreach($responseArray as $thisResponse) {
     
-      echo "<li>" . $thisResponse->response . "</li>";
+      echo "<li>" . stripslashes($thisResponse->response) . "</li>";
     
     }
     

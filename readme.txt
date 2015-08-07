@@ -1,10 +1,10 @@
-=== Popup Surveys ===
+=== Popup Surveys & Polls ===
 Contributors: dusthazard
 Donate link: http://www.ericsestimate.com/donate
 Tags: survey, poll, feedback, feedback form, qualitative survey, testing survey, survey form, popup survey, net promoter score, qualaroo, hotjar
 Requires at least: 4.0
 Tested up to: 4.2.4
-Stable tag: 1.02
+Stable tag: 1.03
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

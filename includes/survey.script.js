@@ -1,28 +1,29 @@
 function activateSurvey(wps_delay_time,surveyId) {
 
-  if($.cookie('wps_survey_session')) {
+  setTimeout(function() {
   
-    var wpsCookieData = [];
-    var wpsRawCookieData = unescape(jQuery.cookie('wps_survey_session'));
-    wpsCookieData = wpsRawCookieData.split(',');
-    
-    wpsCookieData.push(surveyId);
-    
-    //console.log(wpsCookieData);
+      if($.cookie('wps_survey_session')) {
+      
+        var wpsCookieData = [];
+        var wpsRawCookieData = unescape(jQuery.cookie('wps_survey_session'));
+        wpsCookieData = wpsRawCookieData.split(',');
+        
+        wpsCookieData.push(surveyId);
+      
+      } else {
+        
+        var wpsCookieData = [];
+        wpsCookieData = [surveyId];
+      
+      }
+      
+      wpsCookieData = escape(wpsCookieData.join(','));
+      
+      $.cookie('wps_survey_session',wpsCookieData, {expires:7, path: '/'});
   
-  } else {
-    
-    var wpsCookieData = [];
-    wpsCookieData = [surveyId];
+      $(".wps_wp_survey_box").animate({bottom: "+=500"}, 1000);
   
-  }
-  
-  //alert(wpsCookieData);
-  
-  wpsCookieData = escape(wpsCookieData.join(','));
-  
-  $.cookie('wps_survey_session',wpsCookieData, {expires:7, path: '/'});
-  jQuery(".wps_wp_survey_box").delay(wps_delay_time).animate({bottom: "+=500"}, 1000);
+  }, wps_delay_time);
   
 }
 
@@ -102,7 +103,7 @@ jQuery(document).ready(function($) {
     
     }
     
-    if(wpsQuestionResponse) {
+    if(wpsQuestionResponse != "") {
         wpsSaveResponse(wpsSurveyId,wpsQuestionId,wpsQuestionResponse);
     }
   
@@ -117,6 +118,14 @@ jQuery(document).ready(function($) {
     jQuery(".wps_net_promoter_choice").removeClass("wps_net_promoter_selected");
     jQuery(this).addClass("wps_net_promoter_selected");
     $(".wps_question_submit_btn").addClass("wps_save_btn_activated");
+  });
+  
+  $("#wps_survey_type_text_response textarea").on("change keyup paste", function() {
+    if($(this).val() != "") {
+      $(".wps_question_submit_btn").addClass("wps_save_btn_activated");
+    } else {
+      $(".wps_question_submit_btn").removeClass("wps_save_btn_activated");
+    }
   });
 
 });

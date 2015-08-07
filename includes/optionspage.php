@@ -48,7 +48,7 @@ function build_survey_page() {
                 $activateDeactivateLink = ($surveyItem->status == 0) ? "<a href=\"?page=wp-survey&activateSurveyId=" . $surveyItem->id . "\">Activate Survey</a>" : "<a href=\"?page=wp-survey&deactivateSurveyId=" . $surveyItem->id . "\">Deactivate Survey</a>";
               ?>
                 <div id="survey_list_item_<?php echo $surveyItem->id; ?>" class='survey_list_item <?php echo $wpsStatusClass; ?>'>
-                  <h3><?php echo $surveyItem->name; ?></h3>
+                  <h3><?php echo stripslashes($surveyItem->name); ?></h3>
                   <div class=''>
                     <p><strong>Created Date:</strong> <?php echo date( 'F j, Y', strtotime($surveyItem->time)); ?><br />
                        <strong>Survey Views:</strong> <?php echo $surveyItem->survey_views; ?><br />
@@ -211,7 +211,7 @@ function build_new_survey_page() {
                     
                     */ ?>
                     <div class="delay_survey">
-                      <p>Display Survey After <input name="display_seconds" type="text" value="<?php echo isset($selectedSurvey) ? $selectedSurvey->display_seconds : 0; ?>" /> Seconds</p>
+                      <p>Display Survey After <input name="display_seconds" type="text" value="<?php echo isset($selectedSurvey) ? $selectedSurvey->display_seconds : 20; ?>" /> Seconds</p>
                     </div>   
                     <div class="display_per_visitor">
                       <p>Display up to <input name="display_per_visitor" type="text" value="<?php echo isset($selectedSurvey) ? $selectedSurvey->display_per_visitor : 3; ?>" /> times per visitor</p>

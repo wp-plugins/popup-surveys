@@ -89,7 +89,7 @@
        
        .show_results_area {display: block; position: relative;}
         .show_results_area p {clear: both;}
-        .show_results_area strong {width: 28px; float: left; margin-top: 4px;}
+        .show_results_area .wps_results_response_key {width: 28px; float: left; margin-top: 4px;}
         .show_results_area .wps_results_response_number { float: left; margin-top: 4px; width: 1.4rem;}
         .show_results_area .wps_results_response_graph {display: block; overflow: hidden;}
         .show_results_area span.wps_results_response_bar {background-color: #85c16f; padding: 4px; display: block;}
