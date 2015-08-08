@@ -3,7 +3,7 @@
 Plugin Name: Popup Surveys & Polls
 Plugin URI: http://www.ericsestimate.com
 Description: Popup surveys lets you ask visitors questions about your site. Use this feedback to build a better blog or business.
-Version: 1.03
+Version: 1.04
 Author: dusthazard
 Author URI: http://www.ericsestimate.com
 License: GPL2
@@ -13,6 +13,8 @@ License: GPL2
     This software is released under GPL
 
 */
+
+$versionNumber = "1.04";
 
 include("includes/optionspage.php");
 include("config.php");
@@ -29,6 +31,8 @@ function wps_install() {
 		survey_type text NOT NULL,
 		behavior varchar(16) DEFAULT '' NOT NULL,
 		behavior_url varchar(500) DEFAULT '' NOT NULL,
+		website_side varchar(8) DEFAULT 'right' NOT NULL,
+		custom_thank_you varchar(256) DEFAULT '' NOT NULL,
 		display_seconds mediumint(4) DEFAULT 0 NOT NULL,
 		survey_views mediumint(7) DEFAULT 0 NOT NULL,
 		status mediumint(1) DEFAULT 0 NOT NULL,
@@ -80,7 +84,7 @@ function wps_install_data() {
 register_activation_hook( __FILE__, 'wps_install' );
 
 function wps_survey_code() {
-  global $wpdb, $survey_table_name, $question_table_name, $session_table_name, $response_table_name;
+  global $wpdb, $survey_table_name, $question_table_name, $session_table_name, $response_table_name, $versionNumber;
   $qry = "SELECT * FROM $survey_table_name WHERE status = 1";
   $surveyArray = $wpdb->get_results( $qry );
   if(count($surveyArray) != 0) {
@@ -133,7 +137,7 @@ function wps_survey_code() {
     
  ?>
 
-    <div id='wps_wp_survey_<?php echo $chosenSurvey->id; ?>' class='wps_wp_survey_box'>
+    <div id='wps_wp_survey_<?php echo $chosenSurvey->id; ?>' class='wps_wp_survey_box wps_wp_survey_v_<?php echo $versionNumber; ?>'>
       <div id="wps_close_wp_survey_box">x</div>
       <h4><?php echo stripslashes($wpsQuestionText); ?></h4>
       <div id='wps_answer_box_<?php echo $wpsQuestionId; ?>' class="wps_wp_question_box">
