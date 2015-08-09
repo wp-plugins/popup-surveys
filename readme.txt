@@ -4,7 +4,7 @@ Donate link: http://www.ericsestimate.com/donate
 Tags: survey, poll, feedback, feedback form, qualitative survey, testing survey, survey form, popup survey, net promoter score, qualaroo, hotjar
 Requires at least: 4.0
 Tested up to: 4.2.4
-Stable tag: 1.05
+Stable tag: 1.06
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,9 @@ At this time each survey/poll will show up on all pages of your site. In the fut
 5. Activate multiple surveys or polls at the same time. Each visitor will be shown a random poll that is active for them. 
 
 == Changelog ==
+
+= 1.06 =
+* Fixed a bug where the db would not update along with the plugin
 
 = 1.05 =
 * Added the ability to display the surveys and polls on the left or the right side of the site
