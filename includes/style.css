@@ -1,6 +1,8 @@
 /* styles for wp survey */
 
-.wps_wp_survey_box {background-color: #292929; border-radius: 6px 6px 0 0; position: fixed; bottom: -500px; padding: 20px; color: white; min-width: 280px; right: 10%; text-align: center; max-width: 380px; font-size: 14px; direction: ltr; text-decoration: none; font-style: normal; font-weight: 300; line-height: 1.5em; font-family: "Open Sans", Arial, Sans-serif;}
+.wps_wp_survey_box {background-color: #292929; border-radius: 6px 6px 0 0; position: fixed; bottom: -500px; padding: 20px; color: white; min-width: 280px; text-align: center; max-width: 380px; font-size: 14px; direction: ltr; text-decoration: none; font-style: normal; font-weight: 300; line-height: 1.5em; font-family: "Open Sans", Arial, Sans-serif;}
+ .wps_wp_survey_box_left {left: 10%;}
+ .wps_wp_survey_box_right {right: 10%;}
  .wps_wp_survey_box h3,
  .wps_wp_survey_box h2,
  .wps_wp_survey_box h4,

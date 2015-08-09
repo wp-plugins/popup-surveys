@@ -19,6 +19,8 @@ function create_new_survey_callback() {
   $urls = array();
   $displaySeconds = $_POST['display_seconds'];
   $displayPerVisitor = $_POST['display_per_visitor'];
+  $displayOnSide = $_POST['display_on_side'];
+  $customThankYou = $_POST['custom_thank_you'] ? $_POST['custom_thank_you'] : "";
   
   $create_or_update = isset($_POST['surveyId']) ? "update" : "create";
   
@@ -45,7 +47,9 @@ function create_new_survey_callback() {
             'behavior'          =>  $behavior,
             'behavior_url'      =>  $urls,
             'display_seconds'   =>  $displaySeconds,
-            'display_per_visitor' =>  $displayPerVisitor
+            'display_per_visitor' =>  $displayPerVisitor,
+            'website_side' =>  $displayOnSide,
+            'custom_thank_you' =>  $customThankYou
         )
     );
     
@@ -71,7 +75,9 @@ function create_new_survey_callback() {
             'behavior'          =>  $behavior,
             'behavior_url'      =>  $urls,
             'display_seconds'   =>  $displaySeconds,
-            'display_per_visitor' =>  $displayPerVisitor
+            'display_per_visitor' =>  $displayPerVisitor,
+            'website_side' =>  $displayOnSide,
+            'custom_thank_you' =>  $customThankYou
         ),
         array( 'id' => $_POST['surveyId'] )
     );
@@ -113,6 +119,15 @@ function save_survey_response_callback() {
             'response'        =>  $questionResponse
         )
     );
+    
+    $query = "SELECT custom_thank_you FROM $survey_table_name WHERE id = $surveyId";
+    $customThankYou = $wpdb->get_results($query);
+    
+    if($customThankYou[0]->custom_thank_you == "") {
+      echo "Thank You For Your Feedback!";
+    } else {
+      echo $customThankYou[0]->custom_thank_you;
+    }
     
   }
   

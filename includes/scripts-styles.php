@@ -13,7 +13,7 @@
         body .wps_wp_survey_box textarea {height: 90px; margin: 0 0 1rem; width: 100%;}
        body .wps_wp_survey_box input {vertical-align: middle; margin-right: 6px;}
        
-       .wps
+       .small_textarea {width: 100%; height: 80px;}
        
        body #wps_survey_type_net_promoter {max-width: 340px; margin: 0 auto;}
         #wps_survey_type_net_promoter .wps_net_promoter_min {float: left;}
@@ -113,6 +113,11 @@
           if(jQuery(this).val() == "<?php echo $selectedQuestion->answer_type; ?>")
                 jQuery(this).attr("selected","selected");
         
+        });
+        
+        jQuery(".display_on_side option").each(function() {
+          if(jQuery(this).val() == "<?php echo $selectedSurvey->website_side; ?>")
+                jQuery(this).attr("selected","selected");
         });
         
         jQuery("#behavior_display option").each(function() {

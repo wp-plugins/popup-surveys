@@ -4,7 +4,7 @@ Donate link: http://www.ericsestimate.com/donate
 Tags: survey, poll, feedback, feedback form, qualitative survey, testing survey, survey form, popup survey, net promoter score, qualaroo, hotjar
 Requires at least: 4.0
 Tested up to: 4.2.4
-Stable tag: 1.04
+Stable tag: 1.05
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,8 @@ Other features:
 * Create an unlimited amount of surveys
 * Run multiple surveys at the same time (only one will be displayed to a user at once)
 * Control the delay before displaying a survey
+* Display your survey on the left or the right side of your website
+* Customize the thank you message of your survey
 
 This plugin contains full functionality and doesn't lock down features like other survey or poll plugins do.
 
@@ -109,6 +111,10 @@ At this time each survey/poll will show up on all pages of your site. In the fut
 5. Activate multiple surveys or polls at the same time. Each visitor will be shown a random poll that is active for them. 
 
 == Changelog ==
+
+= 1.05 =
+* Added the ability to display the surveys and polls on the left or the right side of the site
+* Added custom thank you message functionality to the admin page
 
 = 1.04 =
 * Fixed bug that sometimes didn't show the survey when the site was using a caching plugin

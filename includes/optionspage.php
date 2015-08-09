@@ -191,6 +191,8 @@ function build_new_survey_page() {
                       <div id="cta_1" class="create_call_to_action">
                         <p><input name="cta_1" class="text" value="Send" type="text" /></p>
                         <p><select name="wps_cta_action"><option value="thankyou">Thank You Message</option></select></p>
+                        <p><strong>Custom Thank You Message</strong> (leave blank for default)</p>
+                        <p><textarea class="small_textarea" name="custom_thank_you"><?php echo stripslashes($selectedSurvey->custom_thank_you); ?></textarea></p>
                       </div>
                     </div>                      
                   </div>
@@ -215,7 +217,10 @@ function build_new_survey_page() {
                     </div>   
                     <div class="display_per_visitor">
                       <p>Display up to <input name="display_per_visitor" type="text" value="<?php echo isset($selectedSurvey) ? $selectedSurvey->display_per_visitor : 3; ?>" /> times per visitor</p>
-                    </div>                                                         
+                    </div>
+                    <div class="display_on_side">
+                      <p>Display survey on the <select name="display_on_side"><option value="right">Right</option><option value="left">Left</option></select> side of the page.</p>
+                    </div>
                   </div>
                 </div> <!-- survey_create_body -->
                 <div class="survey_preview">

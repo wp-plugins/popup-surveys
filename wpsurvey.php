@@ -3,7 +3,7 @@
 Plugin Name: Popup Surveys & Polls
 Plugin URI: http://www.ericsestimate.com
 Description: Popup surveys lets you ask visitors questions about your site. Use this feedback to build a better blog or business.
-Version: 1.04
+Version: 1.05
 Author: dusthazard
 Author URI: http://www.ericsestimate.com
 License: GPL2
@@ -137,7 +137,7 @@ function wps_survey_code() {
     
  ?>
 
-    <div id='wps_wp_survey_<?php echo $chosenSurvey->id; ?>' class='wps_wp_survey_box wps_wp_survey_v_<?php echo $versionNumber; ?>'>
+    <div id='wps_wp_survey_<?php echo $chosenSurvey->id; ?>' class='wps_wp_survey_box wps_wp_survey_v_<?php echo $versionNumber; ?> wps_wp_survey_box_<?php echo $chosenSurvey->website_side; ?>'>
       <div id="wps_close_wp_survey_box">x</div>
       <h4><?php echo stripslashes($wpsQuestionText); ?></h4>
       <div id='wps_answer_box_<?php echo $wpsQuestionId; ?>' class="wps_wp_question_box">

@@ -49,7 +49,7 @@ function wpsSaveResponse(surveyId,questionId,questionResponse,ipAddress) {
         if(jQuery.cookie('wps_survey_done'))
             previousDoneCookie = jQuery.cookie('wps_survey_done') + ",";
         jQuery.cookie("wps_survey_done",previousDoneCookie + surveyId);
-        jQuery(".wps_wp_survey_box h4").html("Thank You For Your Feedback!");
+        jQuery(".wps_wp_survey_box h4").html(result);
         jQuery(".wps_wp_question_box").html('');
         jQuery(".wps_wp_survey_box").delay(2000).fadeOut(1000);
         
